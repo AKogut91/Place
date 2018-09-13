@@ -13,11 +13,9 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: MKMapView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       
     }
     
     func place(lat: CLLocationDegrees, long: CLLocationDegrees, titel: String, subTitel: String) {
@@ -32,5 +30,4 @@ class MapViewController: UIViewController {
         annotation.subtitle = subTitel
         mapView.addAnnotation(annotation)
     }
-    
 }

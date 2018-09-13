@@ -14,18 +14,14 @@ class ListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setTable()
     }
 
   private func setTable() {
-        
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
-        
     }
-
 }
 
 extension ListViewController: UITableViewDataSource ,UITableViewDelegate {

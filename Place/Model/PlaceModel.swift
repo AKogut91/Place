@@ -32,12 +32,4 @@ class PlacesObject {
     
     static var places = [PlaceModel]()
     
-    static func setPlaces () {
-        
-        
-        
-    }
 }
-
-
-

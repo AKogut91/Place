@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Place1</key>
+	<dict>
+		<key>lat</key>
+		<real>50.399192</real>
+		<key>long</key>
+		<real>30.616813</real>
+		<key>titel</key>
+		<string>Aркадия</string>
+		<key>subTitel</key>
+		<string>ТЦ</string>
+		<key>detailTitel</key>
+		<string>Торговый Центр</string>
+		<key>imge</key>
+		<string>https://www.google.com/imgres?imgurl=https%3A%2F%2Ftrademaster.ua%2Fim%2Fpics%2F9641165-TradeMasters.jpg</string>
+	</dict>
+	<key>Place2</key>
+	<dict>
+		<key>lat</key>
+		<real>50.395918</real>
+		<key>long</key>
+		<real>30.632344</real>
+		<key>titel</key>
+		<string>Aладин</string>
+		<key>subTitel</key>
+		<string>ТЦ</string>
+		<key>detailTitel</key>
+		<string>Торговый Центр</string>
+		<key>imge</key>
+		<string>https://www.google.com/imgres?imgurl=https%3A%2F%2Ftrademaster.ua%2Fim%2Fpics%2F9641165-TradeMasters.jpg</string>
+	</dict>
+	<key>Place3</key>
+	<dict>
+		<key>lat</key>
+		<real>50.414359</real>
+		<key>long</key>
+		<real>30.650989</real>
+		<key>titel</key>
+		<string>New Way</string>
+		<key>subTitel</key>
+		<string>ТЦ</string>
+		<key>detailTitel</key>
+		<string>Торговый Центр</string>
+		<key>imge</key>
+		<string>https://www.google.com/imgres?imgurl=https%3A%2F%2Ftrademaster.ua%2Fim%2Fpics%2F9641165-TradeMasters.jpg</string>
+	</dict>
+	<key>Place4</key>
+	<dict>
+		<key>lat</key>
+		<real>50.418699</real>
+		<key>long</key>
+		<real>30.631489</real>
+		<key>titel</key>
+		<string>Aшан</string>
+		<key>subTitel</key>
+		<string>ТЦ</string>
+		<key>detailTitel</key>
+		<string>Торговый Центр</string>
+		<key>imge</key>
+		<string>https://www.google.com/imgres?imgurl=https%3A%2F%2Ftrademaster.ua%2Fim%2Fpics%2F9641165-TradeMasters.jpg</string>
+	</dict>
+	<key>Place5</key>
+	<dict>
+		<key>lat</key>
+		<real>50.453449</real>
+		<key>long</key>
+		<real>30.598639</real>
+		<key>titel</key>
+		<string>Комод</string>
+		<key>subTitel</key>
+		<string>ТЦ</string>
+		<key>detailTitel</key>
+		<string>Торговый Центр</string>
+		<key>imge</key>
+		<string>https://www.google.com/imgres?imgurl=https%3A%2F%2Ftrademaster.ua%2Fim%2Fpics%2F9641165-TradeMasters.jpg</string>
+	</dict>
+</dict>
+</plist>

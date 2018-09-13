@@ -14,6 +14,8 @@
 		112BEBC5214AF5800066B07A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BEBC4214AF5800066B07A /* MapViewController.swift */; };
 		112BEBC7214AF5C20066B07A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BEBC6214AF5C20066B07A /* ListViewController.swift */; };
 		112BEBC9214AF7520066B07A /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BEBC8214AF7520066B07A /* PlaceModel.swift */; };
+		112BEBCD214AFCD90066B07A /* Places.plist in Resources */ = {isa = PBXBuildFile; fileRef = 112BEBCC214AFCD90066B07A /* Places.plist */; };
+		112BEBD0214B030B0066B07A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BEBCF214B030B0066B07A /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		112BEBC4214AF5800066B07A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		112BEBC6214AF5C20066B07A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		112BEBC8214AF7520066B07A /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		112BEBCC214AFCD90066B07A /* Places.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Places.plist; sourceTree = "<group>"; };
+		112BEBCF214B030B0066B07A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +86,9 @@
 		112BEBC2214AF5630066B07A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				112BEBCE214B02000066B07A /* Services */,
 				112BEBC8214AF7520066B07A /* PlaceModel.swift */,
+				112BEBCC214AFCD90066B07A /* Places.plist */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -92,6 +98,14 @@
 			children = (
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		112BEBCE214B02000066B07A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				112BEBCF214B030B0066B07A /* NetworkService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,6 +168,7 @@
 			files = (
 				112BEBBA214AF1DF0066B07A /* LaunchScreen.storyboard in Resources */,
 				112BEBB7214AF1DF0066B07A /* Assets.xcassets in Resources */,
+				112BEBCD214AFCD90066B07A /* Places.plist in Resources */,
 				112BEBB5214AF1DE0066B07A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -165,6 +180,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				112BEBD0214B030B0066B07A /* NetworkService.swift in Sources */,
 				112BEBB0214AF1DE0066B07A /* AppDelegate.swift in Sources */,
 				112BEBC9214AF7520066B07A /* PlaceModel.swift in Sources */,
 				112BEBC5214AF5800066B07A /* MapViewController.swift in Sources */,
