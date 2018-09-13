@@ -18,11 +18,32 @@ class MapViewController: UIViewController {
 
     }
     
-    func place(lat: CLLocationDegrees, long: CLLocationDegrees, titel: String, subTitel: String) {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        setPlaces()
+    }
+    
+    private func setPlaces() {
         
-        let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 1, longitudeDelta: 1)
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.5) {
+            
+            for places in PlacesObject.places {
+                
+                let latDegres = CLLocationDegrees(places.lat)
+                let longDegres = CLLocationDegrees(places.long)
+                print(latDegres)
+                self.place(lat: latDegres, long: longDegres, titel: places.titel, subTitel: places.subTitel)
+            }
+        }
+    }
+    
+   private func place(lat: CLLocationDegrees, long: CLLocationDegrees, titel: String, subTitel: String) {
+        
+        let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat, long)
+    
         let region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+    
         mapView.setRegion(region, animated: true)
         let annotation = MKPointAnnotation()
         annotation.coordinate = location

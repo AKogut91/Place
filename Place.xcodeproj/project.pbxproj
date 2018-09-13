@@ -16,6 +16,7 @@
 		112BEBC9214AF7520066B07A /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BEBC8214AF7520066B07A /* PlaceModel.swift */; };
 		112BEBCD214AFCD90066B07A /* Places.plist in Resources */ = {isa = PBXBuildFile; fileRef = 112BEBCC214AFCD90066B07A /* Places.plist */; };
 		112BEBD0214B030B0066B07A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BEBCF214B030B0066B07A /* NetworkService.swift */; };
+		112BEBD2214B06740066B07A /* ParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 112BEBD1214B06740066B07A /* ParseService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		112BEBC8214AF7520066B07A /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		112BEBCC214AFCD90066B07A /* Places.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Places.plist; sourceTree = "<group>"; };
 		112BEBCF214B030B0066B07A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		112BEBD1214B06740066B07A /* ParseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				112BEBCF214B030B0066B07A /* NetworkService.swift */,
+				112BEBD1214B06740066B07A /* ParseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				112BEBD0214B030B0066B07A /* NetworkService.swift in Sources */,
+				112BEBD2214B06740066B07A /* ParseService.swift in Sources */,
 				112BEBB0214AF1DE0066B07A /* AppDelegate.swift in Sources */,
 				112BEBC9214AF7520066B07A /* PlaceModel.swift in Sources */,
 				112BEBC5214AF5800066B07A /* MapViewController.swift in Sources */,

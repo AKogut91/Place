@@ -18,7 +18,6 @@ class ListViewController: UIViewController {
     }
 
   private func setTable() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
     }
@@ -26,18 +25,19 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDataSource ,UITableViewDelegate {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return PlacesObject.places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
         
-        cell.textLabel?.text = "Hello"
-        cell.backgroundColor = UIColor.cyan
-        
-        
+        cell.textLabel?.text = PlacesObject.places[indexPath.row].titel
         return cell
     }
     

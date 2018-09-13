@@ -10,14 +10,14 @@ import Foundation
 
 class PlaceModel {
     
-    var lat = Float()
-    var long = Float()
+    var lat = Double()
+    var long = Double()
     var titel = String()
     var subTitel = String()
     var detailTitel = String()
     var image = String()
     
-    init(lat:Float, long: Float, titel: String, subTitel: String, detailTitel: String, image: String) {
+    init(lat:Double, long: Double, titel: String, subTitel: String, detailTitel: String, image: String) {
         
         self.lat = lat
         self.long = long
@@ -28,8 +28,7 @@ class PlaceModel {
     }
 }
 
+//all load Places Object
 class PlacesObject {
-    
     static var places = [PlaceModel]()
-    
 }

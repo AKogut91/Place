@@ -14,7 +14,7 @@
 		<string>ТЦ</string>
 		<key>detailTitel</key>
 		<string>Торговый Центр</string>
-		<key>imge</key>
+		<key>image</key>
 		<string>https://www.google.com/imgres?imgurl=https%3A%2F%2Ftrademaster.ua%2Fim%2Fpics%2F9641165-TradeMasters.jpg</string>
 	</dict>
 	<key>Place2</key>
@@ -29,7 +29,7 @@
 		<string>ТЦ</string>
 		<key>detailTitel</key>
 		<string>Торговый Центр</string>
-		<key>imge</key>
+		<key>image</key>
 		<string>https://www.google.com/imgres?imgurl=https%3A%2F%2Ftrademaster.ua%2Fim%2Fpics%2F9641165-TradeMasters.jpg</string>
 	</dict>
 	<key>Place3</key>
@@ -44,7 +44,7 @@
 		<string>ТЦ</string>
 		<key>detailTitel</key>
 		<string>Торговый Центр</string>
-		<key>imge</key>
+		<key>image</key>
 		<string>https://www.google.com/imgres?imgurl=https%3A%2F%2Ftrademaster.ua%2Fim%2Fpics%2F9641165-TradeMasters.jpg</string>
 	</dict>
 	<key>Place4</key>
@@ -59,7 +59,7 @@
 		<string>ТЦ</string>
 		<key>detailTitel</key>
 		<string>Торговый Центр</string>
-		<key>imge</key>
+		<key>image</key>
 		<string>https://www.google.com/imgres?imgurl=https%3A%2F%2Ftrademaster.ua%2Fim%2Fpics%2F9641165-TradeMasters.jpg</string>
 	</dict>
 	<key>Place5</key>
@@ -74,7 +74,7 @@
 		<string>ТЦ</string>
 		<key>detailTitel</key>
 		<string>Торговый Центр</string>
-		<key>imge</key>
+		<key>image</key>
 		<string>https://www.google.com/imgres?imgurl=https%3A%2F%2Ftrademaster.ua%2Fim%2Fpics%2F9641165-TradeMasters.jpg</string>
 	</dict>
 </dict>

@@ -10,11 +10,10 @@ import Foundation
 
 final class NetworkService {
 
-    // Load CPS information about our places
+    // Load (GPS, titel, image) information about our places
     static func loadPlaceData(placesData: @escaping (NSDictionary) -> ()) {
     
         if let path = Bundle.main.path(forResource: "Places", ofType: "plist") {
-            
             if let dic = NSDictionary(contentsOfFile: path) as? [String: Any] {
                 placesData(dic as NSDictionary)
             }
