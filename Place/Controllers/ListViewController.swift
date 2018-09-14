@@ -14,24 +14,12 @@ class ListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sorteButton: UIBarButtonItem!
     
-    var userLocation: CLLocation {
-        return CLLocation(latitude: MapViewController.coord.lat, longitude: MapViewController.coord.long)
-    }
-    
-    func placeLocation (lat:CLLocationDegrees, long:CLLocationDegrees) ->  CLLocation{
-        return CLLocation(latitude: lat, longitude: long)
-    }
-    
-    func distance(to location: CLLocation) -> CLLocationDistance {
-        return userLocation.distance(from: self.userLocation)
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         sorteButton.tintColor = UIColor.white
-        self.title = "Places"
+        self.title = "Ближайшие ТЦ"
         
     }
     
@@ -39,6 +27,7 @@ class ListViewController: UIViewController {
         
         print("sortedPlace button")
         locationSorted()
+        self.title = "Рядом с Вами"
     }
     
     func showOrHideBarButton(show: Bool)  {
@@ -53,29 +42,35 @@ class ListViewController: UIViewController {
     
     func locationSorted() {
         
-        print("User Location \(userLocation)")
+        print("User Location \(LocationDistanceService.userLocation)")
         let placeObjc = PlacesObject.places
+        
+        //Places Location
         var placesLocationDict = [CLLocation]()
+        
+        //Places Distance
         var distanceFromUser: [Double: PlaceModel] = [:]
         
         //Get all Places Location
         for i in placeObjc {
-            let location = placeLocation(lat: i.lat, long: i.long)
+            let location = LocationDistanceService.placeLocation(lat: i.lat, long: i.long)
             placesLocationDict.append(location)
         }
     
-        //Get location Distance from userLocation to Place and make Dictianary [distanse: Object]
         for (dict, obj) in zip(placesLocationDict, placeObjc) {
             
-                let distance = userLocation.distance(from: dict)
+                //Get location Distance from userLocation to Place and make Dictianary [distanse: Object]
+                let distance = LocationDistanceService.userLocation.distance(from: dict)
                 distanceFromUser[distance] = obj
             }
         
         //Sorted Distance
         let sortedLocation = distanceFromUser.map({$0.key}).sorted(by: {$0 < $1})
+        
+        //Sorted Distance
         var finalLocation:[PlaceModel] = []
         
-        //Add Object im correct order
+        //Add Place Object im correct order for TableView
         for place in sortedLocation {
             print(place)
             finalLocation.append(distanceFromUser[place]!)
@@ -89,6 +84,7 @@ class ListViewController: UIViewController {
 //MARK: - Sorted Metods
 extension ListViewController {
     
+    // Remove old order Places and set new order Places
     private func updatePlaces(objects: [PlaceModel]) {
         
         PlacesObject.places.removeAll()
@@ -140,7 +136,7 @@ extension ListViewController: UITableViewDataSource ,UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let coorinatePlace = PlacesObject.places[indexPath.row]
-        alert(titel: "Просчитать маршрут?", coordinate: coorinatePlace)
+        alert(titel: "Проложить маршрут на карте?", coordinate: coorinatePlace)
     }
 }
 
@@ -151,7 +147,7 @@ extension ListViewController {
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
         
         //Changing Alert font of title and message.
-        let titleFont = [kCTFontAttributeName: UIFont(name: "Arial", size: 16)!]
+        let titleFont = [kCTFontAttributeName: UIFont(name: "Arial", size: 18)!]
         let titleAttrString = NSMutableAttributedString(string: titel, attributes: titleFont as [NSAttributedStringKey : Any])
         
         alertController.setValue(titleAttrString, forKey: "attributedTitle")
