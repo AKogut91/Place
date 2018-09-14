@@ -34,7 +34,6 @@ class MapViewController: UIViewController {
         startUpdatingUserLocation()
     }
     
-    
     private func setPlaces() {
         
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {

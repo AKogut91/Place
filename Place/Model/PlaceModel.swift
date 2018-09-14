@@ -28,7 +28,7 @@ class PlaceModel {
     }
 }
 
-//all load Places Object
+//all loaded Places Object
 class PlacesObject {
     static var places = [PlaceModel]()
 }
