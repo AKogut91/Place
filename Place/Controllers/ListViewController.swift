@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ListViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTable()
+        self.title = "Places"
     }
 
   private func setTable() {
@@ -35,18 +37,22 @@ extension ListViewController: UITableViewDataSource ,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ListTableViewCell
+        let cellTitel = PlacesObject.places[indexPath.row]
         
-        cell.textLabel?.text = PlacesObject.places[indexPath.row].titel
+        cell.placeTItel.text = cellTitel.titel
+        cell.placeSubTitel.text = cellTitel.detailTitel
+        ImageService.loadAndShowPicture(imageCell: cell.placeImage, image: cellTitel.image)
+    
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
     }
     
 }
