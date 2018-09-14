@@ -15,7 +15,7 @@ class GradientColors {
     static var bottomColor = UIColor(red: 44/255.0, green: 62/255.0, blue: 80/255.0, alpha: 1.0)
 }
 
-extension UIView{
+extension UIView {
     
     func addGradientLayer(frame: CGRect, colors:[UIColor]){
         let gradient = CAGradientLayer()

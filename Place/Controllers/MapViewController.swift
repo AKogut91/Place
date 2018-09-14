@@ -14,29 +14,26 @@ class MapViewController: UIViewController {
     
     struct Coordinate {
         
-        var lat: Double = 0
-        var lot: Double = 0
+        var lat: CLLocationDegrees = 0
+        var long: CLLocationDegrees = 0
     }
     
-    let locationManager = CLLocationManager()
-    var coord = Coordinate.init()
+    private let locationManager = CLLocationManager()
+    static var coord = Coordinate()
     
     @IBOutlet weak var mapView: MKMapView!
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        findUserLocation()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+        
 
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        setPlaces()
+        startUpdatingUserLocation()
     }
+    
     
     private func setPlaces() {
         
@@ -47,18 +44,19 @@ class MapViewController: UIViewController {
                 let latDegres = CLLocationDegrees(places.lat)
                 let longDegres = CLLocationDegrees(places.long)
                 print(latDegres)
-                self.place(lat: latDegres, long: longDegres, titel: places.titel, subTitel: places.subTitel)
+                self.setPlaceToMap(lat: latDegres, long: longDegres, titel: places.titel, subTitel: places.subTitel)
             }
         }
     }
     
-   private func place(lat: CLLocationDegrees, long: CLLocationDegrees, titel: String, subTitel: String) {
+    //Add point to Map with Titel and subtitle
+    private func setPlaceToMap(lat: CLLocationDegrees, long: CLLocationDegrees, titel: String, subTitel: String) {
         
         let span: MKCoordinateSpan = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
         let location: CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat, long)
-    
+        
         let region: MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-    
+        
         mapView.setRegion(region, animated: true)
         let annotation = MKPointAnnotation()
         annotation.coordinate = location
@@ -66,27 +64,26 @@ class MapViewController: UIViewController {
         annotation.subtitle = subTitel
         mapView.addAnnotation(annotation)
     }
-
-    private func findUserLocation() {
-    print("startUpdatingLocation")
-    locationManager.delegate = self
-    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-    locationManager.requestWhenInUseAuthorization()
-    locationManager.startUpdatingLocation()
+    
+    private func startUpdatingUserLocation() {
+        print("startUpdatingLocation")
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        setPlaces()
     }
-
 }
+
 extension MapViewController : CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
-        print("get location and stopUpdatingLocation")
         //Get location user
-        coord = Coordinate.init(lat: locations[0].coordinate.latitude, lot: locations[0].coordinate.longitude)
+        MapViewController.coord = Coordinate.init(lat: locations[0].coordinate.latitude, long: locations[0].coordinate.longitude)
         
-        coord.lat = coord.lat
-        coord.lot = coord.lot
-        print("MY location  = \(coord)")
+        MapViewController.coord.lat = MapViewController.coord.lat
+        MapViewController.coord.long = MapViewController.coord.long
         //locationManager.stopUpdatingLocation()
     }
 }

@@ -77,5 +77,20 @@
 		<key>image</key>
 		<string>http://relax.com.ua/wp-content/media/kiew/2012/07/komod-1.jpg</string>
 	</dict>
+	<key>Place6</key>
+	<dict>
+		<key>lat</key>
+		<real>50.400921</real>
+		<key>long</key>
+		<real>30.630631</real>
+		<key>titel</key>
+		<string>InSilver</string>
+		<key>subTitel</key>
+		<string>ТЦ</string>
+		<key>detailTitel</key>
+		<string>Торговый Центр</string>
+		<key>image</key>
+		<string>https://novobudovy.com/images/wm/cd0a3f7315a136a23decd817080c69eb.jpg</string>
+	</dict>
 </dict>
 </plist>
